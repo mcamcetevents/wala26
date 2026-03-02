@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECH WALA 2K26 | Innovation & Design Thinking Summit</title>
-    <meta name="description" content="Official technical symposium organized by the Department of MCA, MCET Pollachi. Join us for an Innovation & Design Thinking Summit on March 13, 2026.">
-    
+    <title>TECH WALA 2K26 | Innovation &amp; Design Thinking Summit</title>
+    <meta name="description"
+        content="Official technical symposium organized by the Department of MCA, MCET Pollachi. Join us for an Innovation &amp; Design Thinking Summit on March 13, 2026.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kaushan+Script&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-theme="dark">
+
+<body>
+    <!-- Animated Background Particles -->
+    <div id="bg-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
     <!-- Navbar -->
     <nav id="navbar">
         <div class="container nav-container">
@@ -25,26 +42,25 @@
                 <div class="brand-icon">
                     <i data-lucide="cpu"></i>
                 </div>
-                <span class="brand-text">TECH <span class="primary-italic">WALA</span> 2K26</span>
+                <span class="brand-text">TechWala<span class="brand-accent">'26</span></span>
             </a>
-            
+
             <div class="nav-links">
-                <a href="#home">HOME</a>
-                <a href="#events">EVENTS</a>
-                <a href="#schedule">SCHEDULE</a>
-                <a href="#coordinators">CONTACT</a>
-                <button id="theme-toggle" aria-label="Toggle Theme">
-                    <i data-lucide="sun" class="sun-icon"></i>
-                    <i data-lucide="moon" class="moon-icon"></i>
-                </button>
-                <a href="https://forms.gle/Jd66wSNrj88ipiwJ7" target="_blank" rel="noopener noreferrer" class="btn btn-outline register-btn">REGISTER</a>
+                <a href="#home">Home</a>
+                <a href="#events">Events</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#coordinators">Contact</a>
+                <div class="nav-search">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Search..." />
+                </div>
             </div>
 
             <button id="mobile-menu-toggle" aria-label="Open Menu">
                 <i data-lucide="menu"></i>
             </button>
         </div>
-        
+
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="mobile-menu">
             <div class="mobile-menu-content">
@@ -53,55 +69,59 @@
                 <a href="#schedule">SCHEDULE</a>
                 <a href="#coordinators">COORDINATORS</a>
                 <div class="divider"></div>
-                <a href="https://forms.gle/Jd66wSNrj88ipiwJ7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">REGISTER NOW</a>
+                <a href="https://forms.gle/Jd66wSNrj88ipiwJ7" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">REGISTER NOW</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section — Vervia Style -->
     <header id="home" class="hero">
-        <div class="grain"></div>
-        <div class="hero-glow-1"></div>
-        <div class="hero-glow-2"></div>
-        
-        <div class="container hero-container">
-            <div class="registration-badge">
-                <i data-lucide="zap"></i>
-                <span>REGISTRATION OPEN NOW</span>
-            </div>
-            
-            <h2 class="college-name">Dr. Mahalingam College of Engineering and Technology</h2>
-            <p class="department-presents">Department of MCA Presents</p>
-            
-            <h1 class="main-title">
-                TECH <span class="primary-italic">WALA</span><br>
-                <span class="gradient-text">2K26</span>
-            </h1>
-            
-            <p class="hero-desc">
-                Innovation & Design Thinking Summit. A stage for the tech wizards of tomorrow to showcase their skills, creativity, and passion.
-            </p>
-            
-            <div class="hero-meta">
-                <div class="meta-item">
-                    <i data-lucide="calendar"></i>
-                    <span>13.03.2026</span>
+        <div class="hero-bg-glow hero-glow-left"></div>
+        <div class="hero-bg-glow hero-glow-right"></div>
+
+        <!-- HUGE Background Typography (behind everything) -->
+        <div class="hero-bg-text-stack" aria-hidden="true">
+            <div class="bg-college">Dr. Mahalingam College of Engineering &amp; Technology</div>
+            <div class="bg-dept">Department of MCA</div>
+            <div class="bg-event">TechWala '26</div>
+        </div>
+
+        <!-- Centered Avatar (in front of bg text) -->
+        <div class="hero-avatar-wrap">
+            <div class="hero-avatar-glow"></div>
+            <img src="images/avatar.png" onerror="this.src='images/hero_robot.png'" alt="TechWala Avatar"
+                class="hero-avatar-img">
+        </div>
+
+        <!-- Bottom overlay row: Left Aligned Countdown -->
+        <div class="hero-overlay-row" style="justify-content: flex-start; padding-bottom: 40px; padding-left: 60px;">
+            <div class="hero-countdown-container">
+                <div class="countdown-label">TechWala '26 Starts In</div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="countdown-box">
+                        <span class="count-num" id="cd-days">00</span>
+                        <span class="count-lbl">Days</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="count-num" id="cd-hours">00</span>
+                        <span class="count-lbl">Hours</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="count-num" id="cd-mins">00</span>
+                        <span class="count-lbl">Mins</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="count-num" id="cd-secs">00</span>
+                        <span class="count-lbl">Secs</span>
+                    </div>
                 </div>
-                <div class="meta-divider"></div>
-                <div class="meta-item">
-                    <i data-lucide="map-pin"></i>
-                    <span>MCA Dept, MCET</span>
-                </div>
-            </div>
-            
-            <div class="hero-actions">
-                <a href="https://forms.gle/Jd66wSNrj88ipiwJ7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    Register Now <i data-lucide="chevron-right"></i>
-                </a>
-                <a href="#events" class="btn btn-outline">Explore Events</a>
             </div>
         </div>
-        
+
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -111,48 +131,46 @@
 
     <!-- Events Section -->
     <section id="events" class="events-section">
+        <!-- Marquee Banner -->
+        <div class="events-marquee-container">
+            <div class="events-marquee" id="events-marquee">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
         <div class="container">
             <div class="section-header">
-                <div class="header-content">
-                    <h2 class="section-title">Symposium <span class="primary-italic">Events</span></h2>
-                    <p class="section-subtitle">Choose from our technical & non-technical challenges. Total prize pool of ₹15,500 awaits!</p>
+                <h2 class="section-title">Symposium <span class="section-title-accent">Events</span></h2>
+                <p class="section-subtitle">Explore our latest tech challenges and competitions</p>
+            </div>
+
+            <div class="events-carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prev-event-btn" aria-label="Previous events">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <div class="events-grid carousel-track" id="events-grid">
+                    <!-- Events populated by JavaScript -->
                 </div>
-            </div>
-            
-            <div class="events-grid" id="events-grid">
-                <!-- Events populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="schedule-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Event <span class="primary-italic">Flow</span></h2>
-                <p class="section-subtitle">Follow the official symposium schedule.</p>
-            </div>
-            
-            <div class="timeline" id="timeline">
-                <div class="timeline-line"></div>
-                <!-- Schedule items populated by JavaScript -->
+                <button class="carousel-btn next-btn" id="next-event-btn" aria-label="Next events">
+                    <i data-lucide="chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Coordinators Section -->
+    <!-- Coordinators Section (styled as "Client Testimonials") -->
     <section id="coordinators" class="coordinators-section">
-        <div class="coordinators-bg"></div>
+        <div class="coordinators-bg-glow"></div>
         <div class="container relative">
             <div class="section-header">
-                <h2 class="section-title">Faculty <span class="primary-italic">Coordinators</span></h2>
-                <div class="title-underline"></div>
+                <h2 class="section-title">Faculty <span class="section-title-accent">Coordinators</span></h2>
+                <p class="section-subtitle">See what our faculty experts are managing for you</p>
             </div>
-            
+
             <div class="coordinators-grid" id="coordinators-grid">
                 <!-- Coordinators populated by JavaScript -->
             </div>
-            
+
             <div class="assistance-box">
                 <h3 class="assistance-title">Need Assistance?</h3>
                 <div class="assistance-links" id="assistance-links">
@@ -162,23 +180,43 @@
         </div>
     </section>
 
+    <!-- Schedule Section (styled as "Our Services") -->
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Event <span class="section-title-accent">Flow</span></h2>
+                <p class="section-subtitle">Follow the official symposium schedule</p>
+            </div>
+
+            <div class="timeline" id="timeline">
+                <!-- Schedule items populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
+        <div class="footer-glow"></div>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="brand">
                         <i data-lucide="cpu" class="primary-text"></i>
-                        <span class="brand-text">TECH <span class="primary-italic">WALA</span> 2K26</span>
+                        <span class="brand-text">TechWala<span class="brand-accent">'26</span></span>
                     </div>
-                    <p class="brand-desc">Branding Activity & Technical Symposium organized by the Department of MCA, MCET.</p>
+                    <p class="brand-desc">An Innovation &amp; Design Thinking Summit organized by the Department of MCA,
+                        MCET Pollachi.</p>
                     <div class="social-icons">
-                        <a href="#"><i data-lucide="facebook"></i></a>
-                        <a href="#"><i data-lucide="twitter"></i></a>
-                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="https://www.facebook.com/people/DrMCET/61554832498432/" target="_blank">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="https://x.com/drmcet_ac_in" target="_blank"><i data-lucide="twitter"></i></a>
+                        <a href="https://www.instagram.com/drmcet.ac.in/" target="_blank">
+                            <i data-lucide="instagram"></i>
+                        </a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4 class="footer-label">Quick Access</h4>
                     <ul>
@@ -188,29 +226,34 @@
                         <li><a href="https://forms.gle/Jd66wSNrj88ipiwJ7" target="_blank">Register</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-organizers">
                     <h4 class="footer-label">Organizers</h4>
                     <p class="org-highlight">Department of MCA</p>
                     <p class="org-full">Dr. Mahalingam College of Engineering and Technology</p>
-                    <p class="org-location">Pollachi - 642003</p>
+                    <a href="https://www.google.com/maps/place/Dr.+Mahalingam+College+of+Engineering+and+Technology"
+                        target="_blank" class="org-location">Pollachi - 642003</a>
                 </div>
-                
+
                 <div class="footer-contact">
                     <h4 class="footer-label">Contact Hub</h4>
                     <div class="contact-hub">
-                        <a href="https://www.google.com/maps/place/Dr.+Mahalingam+College+of+Engineering+and+Technology/@10.654981,77.036448,15z/data=!4m6!3m5!1s0x3ba8370d5cf1c86f:0x50220f1c97a228c5!8m2!3d10.6558507!4d77.0363443!16s%2Fm%2F0cr30qj?hl=en&entry=ttu&g_ep=EgoyMDI2MDIyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-item">
+                        <a href="https://www.google.com/maps/place/Dr.+Mahalingam+College+of+Engineering+and+Technology"
+                            target="_blank" class="contact-item">
                             <i data-lucide="map-pin" class="primary-text"></i>
                             <span>Udumalai Road, Pollachi,<br>Tamil Nadu 642003</span>
                         </a>
-                        <!-- Updated Gmail Link -->
-                        <div id="footer-mail-container"></div>
+                        <div id="footer-mail-container" class="contact-item">
+                            <!-- Populated by JS -->
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Tech Wala Symposium. Built with Precision.</p>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Tech Wala Symposium. Built with Precision.</p>
+                </div>
                 <div class="bottom-links">
                     <a href="#">Privacy</a>
                     <a href="#">Terms</a>
@@ -224,7 +267,6 @@
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <div class="modal-rainbow-strip"></div>
-            <button class="modal-close"><i data-lucide="x"></i></button>
             <div class="modal-body" id="modal-body">
                 <!-- Content populated by JavaScript -->
             </div>
@@ -233,4 +275,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
