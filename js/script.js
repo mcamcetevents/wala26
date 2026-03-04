@@ -17,12 +17,12 @@ const events = [
             'Solve 5 problems',
             'Duration: 1 hour'
         ],
-        participation: 'Max 3 members per team',
         prizes: [
             { label: '1st Prize', value: '₹1500' },
             { label: '2nd Prize', value: '₹1000' }
         ],
-        coordinator: 'Dr. N. Divya'
+        coordinator: 'Dr. N. Divya',
+        registrationLink: 'https://forms.gle/8hLHo2Jdzqh5N8hE6'
     },
     {
         title: 'Code Breaker [Debugging]',
@@ -40,12 +40,12 @@ const events = [
             '2 coding concepts',
             '20 minutes each'
         ],
-        participation: 'Max 2 members per team',
         prizes: [
             { label: '1st Prize', value: '₹1500' },
             { label: '2nd Prize', value: '₹1000' }
         ],
-        coordinator: 'Dr. S. Raja Rajeswari'
+        coordinator: 'Dr. S. Raja Rajeswari',
+        registrationLink: 'https://forms.gle/VTebRUB45L7zgy9Y6'
     },
     {
         title: 'Web Wizrdry [Web Design]',
@@ -64,12 +64,12 @@ const events = [
             'Software: PS, Flash, Dreamweaver',
             'Duration: 1 hour'
         ],
-        participation: 'Max 3 members per team',
         prizes: [
             { label: '1st Prize', value: '₹1500' },
             { label: '2nd Prize', value: '₹1000' }
         ],
-        coordinator: 'Mrs. S. Sathyapriya'
+        coordinator: 'Mrs. S. Sathyapriya',
+        registrationLink: 'https://forms.gle/8hLHo2Jdzqh5N8hE6'
     },
     {
         title: 'Tech Brain Battle [Technical Quiz]',
@@ -87,12 +87,12 @@ const events = [
             'Rapid-fire buzzer quiz (10 questions)',
             '30 minutes'
         ],
-        participation: 'Max 3 members per team',
         prizes: [
             { label: '1st Prize', value: '₹1500' },
             { label: '2nd Prize', value: '₹1000' }
         ],
-        coordinator: 'Ms. S. Divya Vahini'
+        coordinator: 'Ms. S. Divya Vahini',
+        registrationLink: 'https://forms.gle/VTebRUB45L7zgy9Y6'
     },
     {
         title: 'Tech Reel Challenge [AI Movie Making]',
@@ -109,12 +109,12 @@ const events = [
             'Bring AI tools and laptop',
             '90 minutes'
         ],
-        participation: 'Max 4 members per team',
         prizes: [
             { label: '1st Prize', value: '₹1500' },
             { label: '2nd Prize', value: '₹1000' }
         ],
-        coordinator: 'Dr. S. Raja Rajeswari'
+        coordinator: 'Dr. S. Raja Rajeswari',
+        registrationLink: 'https://forms.gle/pdeF9HZhAhSJ7VGeA'
     },
     {
         title: 'Brand Battle [Marketing]',
@@ -131,12 +131,12 @@ const events = [
             '5 min prep + 8 min performance',
             '2 min Q&A session'
         ],
-        participation: 'Max 4 members per team',
         prizes: [
             { label: '1st Prize', value: '₹1000' },
             { label: '2nd Prize', value: '₹500' }
         ],
-        coordinator: 'Mrs. M. Rubha'
+        coordinator: 'Mrs. M. Rubha',
+        registrationLink: 'https://forms.gle/kGKFYa3Eg2VDxVqf8'
     },
     {
         title: 'ELITE CRICK AUCTION',
@@ -156,12 +156,12 @@ const events = [
             '80 Crore Virtual Budget',
             'Category-wise auction'
         ],
-        participation: 'Max 3 members per team',
         prizes: [
             { label: '1st Prize', value: '₹1000' },
             { label: '2nd Prize', value: '₹500' }
         ],
-        coordinator: 'Ms. S. Divya Vahini'
+        coordinator: 'Ms. S. Divya Vahini',
+        registrationLink: 'https://forms.gle/kGKFYa3Eg2VDxVqf8'
     }
 ];
 
@@ -213,7 +213,6 @@ const facultyCoordinators = [
     }
 ];
 
-const registrationLink = "https://forms.gle/Jd66wSNrj88ipiwJ7";
 const gmailLink = "https://mail.google.com/mail/?view=cm&fs=1&to=mcamcet.events@gmail.com";
 
 // DOMContentLoaded Initialization
@@ -530,7 +529,7 @@ function initModals() {
                 </div>
 
                 <div style="margin-top: 8px;">
-                    <a href="${registrationLink}" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px;">REGISTER NOW <i data-lucide="arrow-right"></i></a>
+                    <a href="${event.registrationLink}" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px;">REGISTER NOW <i data-lucide="arrow-right"></i></a>
                 </div>
             </div>
         `;
