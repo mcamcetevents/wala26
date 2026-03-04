@@ -1071,8 +1071,8 @@ section {
     border-radius: 18px;
     padding: 24px;
     display: flex;
+    flex-direction: column;
     gap: 16px;
-    align-items: flex-start;
     transition: var(--transition);
     backdrop-filter: blur(10px);
     position: relative;
@@ -1117,7 +1117,7 @@ section {
 }
 
 .coord-info {
-    flex: 1;
+    width: 100%;
 }
 
 .coord-event {
