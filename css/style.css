@@ -498,26 +498,26 @@ ul {
 .bg-college {
     font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
-    font-size: clamp(3rem, 6vw, 6.5rem);
+    font-size: clamp(2.5rem, 4.5vw, 5rem);
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -1.5px;
     max-width: 95%;
     white-space: normal;
-    color: rgba(255, 255, 255, 0.45);
-    text-shadow: 0 0 35px rgba(0, 212, 255, 0.6), 0 0 8px rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 0 45px rgba(0, 212, 255, 0.9), 0 0 15px rgba(0, 0, 0, 1);
 }
 
 .bg-dept {
     font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
-    font-size: clamp(2.2rem, 4.5vw, 4.8rem);
+    font-size: clamp(1.8rem, 3.5vw, 3.8rem);
     font-weight: 800;
     line-height: 1;
     letter-spacing: 2px;
     margin-top: 15px;
-    color: rgba(255, 255, 255, 0.4);
-    text-shadow: 0 0 35px rgba(176, 38, 255, 0.6), 0 0 8px rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 45px rgba(176, 38, 255, 0.9), 0 0 15px rgba(0, 0, 0, 1);
 }
 
 .bg-event {
@@ -527,8 +527,8 @@ ul {
     line-height: 1;
     letter-spacing: 2px;
     margin-top: 15px;
-    color: rgba(255, 255, 255, 0.35);
-    text-shadow: 0 0 25px rgba(0, 212, 255, 0.3), 0 0 8px rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0 0 35px rgba(0, 212, 255, 0.6), 0 0 15px rgba(0, 0, 0, 1);
     /* slightly fainter to not overpower the glowing text above it */
 }
 
