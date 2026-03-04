@@ -176,11 +176,41 @@ const schedule = [
 ];
 
 const facultyCoordinators = [
-    { name: 'Dr. N. Divya', event: 'HackArena [Hacking]', desc: 'Guiding students through the intricacies of ethical hacking and cyber defense.' },
-    { name: 'Dr. S. Raja Rajeswari', event: 'Code Breaker / Tech Reel', desc: 'Managing the debugging and AI movie-making challenges with expert precision.' },
-    { name: 'Mrs. S. Sathyapriya', event: 'Web Wizrdry', desc: 'Overseeing creative web design competitions and innovative UI/UX challenges.' },
-    { name: 'Ms. S. Divya Vahini', event: 'Tech Quiz / Crick Auction', desc: 'Coordinating the knowledge-based battles and the exciting IPL auction event.' },
-    { name: 'Mrs. M. Rubha', event: 'Brand Battle', desc: 'Facilitating the marketing and branding competition with real-world scenarios.' },
+    {
+        event: 'HackArena [Hacking]',
+        staff: 'Dr. N. Divya',
+        students: ['KALILAKSHMAN N', 'GNANASEKAR A']
+    },
+    {
+        event: 'Code Breaker [Debugging]',
+        staff: 'Dr. S. Raja Rajeswari',
+        students: ['DEEKSHAA N K', 'KEERTHANA G']
+    },
+    {
+        event: 'Web Wizrdry [Web Design]',
+        staff: 'Mrs. S. Sathyapriya',
+        students: ['DINAKARAN V', 'KUMARAGURU P']
+    },
+    {
+        event: 'Tech Brain Battle [Technical Quiz]',
+        staff: 'Ms. S. Divya Vahini',
+        students: ['MANJULA DEVI S', 'MUKILA J']
+    },
+    {
+        event: 'Tech Reel Challenge [AI Movie Making]',
+        staff: 'Dr. S. Raja Rajeswari',
+        students: ['HARINI M', 'ABINESH D']
+    },
+    {
+        event: 'Brand Battle [Marketing]',
+        staff: 'Mrs. M. Rubha',
+        students: ['ASWANTH P', 'ASNA JASMINE S']
+    },
+    {
+        event: 'Elite Crick Auction [IPL Auction]',
+        staff: 'Ms. S. Divya Vahini',
+        students: ['DHARANITHAR A', 'THANUSH A P']
+    }
 ];
 
 const registrationLink = "https://forms.gle/Jd66wSNrj88ipiwJ7";
@@ -301,8 +331,8 @@ function renderEvents() {
     const grid = document.getElementById('events-grid');
     grid.innerHTML = events.map((event, index) => `
         <div class="event-card" onclick="openEventModal(${index})">
-            <div class="event-image-container">
-                <img src="${event.img}" onerror="this.src='images/college-bg.png'" alt="${event.title}" loading="lazy">
+            <div class="event-icon-wrapper">
+                <i data-lucide="${event.iconType}"></i>
             </div>
             <div class="event-card-body">
                 <div class="event-meta-tags">${event.subCategory}</div>
@@ -368,18 +398,21 @@ function renderTimeline() {
 function renderCoordinators() {
     const grid = document.getElementById('coordinators-grid');
     grid.innerHTML = facultyCoordinators.map((coord, i) => {
-        const initials = coord.name.split(' ').map(n => n[0]).filter((_, idx) => idx === 0 || idx === coord.name.split(' ').length - 1).join('');
-        const stars = '★★★★★';
+        const initials = coord.event.split(' ').map(n => n[0].replace(/[^a-zA-Z]/g, '')).filter(Boolean).slice(0, 2).join('').toUpperCase();
         return `
         <div class="coord-card">
             <div class="coord-avatar">${initials}</div>
-            <div class="coord-info">
-                <div class="coord-stars"><span>${stars}</span></div>
-                <p class="coord-event">${coord.event}</p>
-                <h4>${coord.name}</h4>
-                <p class="coord-desc">${coord.desc.substring(0, 80)}...</p>
-                <div class="coord-socials">
-                    <a href="${gmailLink}" target="_blank"><i data-lucide="mail"></i></a>
+            <div class="coord-info" style="width: 100%;">
+                <h4 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--color-primary);">${coord.event}</h4>
+                
+                <div style="margin-bottom: 12px;">
+                    <span style="font-size: 10px; font-weight: 700; background: var(--color-primary-dim); color: var(--color-primary); padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px;">STAFF COORDINATOR</span>
+                    <p style="font-size: 13px; font-weight: 500; color: var(--text-main); margin-top: 4px;">${coord.staff}</p>
+                </div>
+
+                <div>
+                    <span style="font-size: 10px; font-weight: 700; background: rgba(176, 38, 255, 0.15); color: var(--color-accent); padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px;">STUDENT COORDINATORS</span>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px; line-height: 1.6;">${coord.students.join('<br>')}</p>
                 </div>
             </div>
         </div>
