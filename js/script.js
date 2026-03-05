@@ -173,13 +173,13 @@ const events = [
 ];
 
 const schedule = [
-    { time: '09:00 AM', event: 'Registration & Kit Distribution', icon: 'play', desc: 'Welcome desk at the MCA foyer.' },
-    { time: '10:00 AM', event: 'Inauguration Ceremony', icon: 'star', desc: 'Grand opening with faculty and guests.' },
-    { time: '10:45 AM', event: 'Tea Break', icon: 'coffee', desc: 'Refreshments provided at the cafeteria.' },
-    { time: '11:00 AM', event: 'Preliminary Rounds', icon: 'zap', desc: 'Technical & Non-Technical eliminations.' },
-    { time: '01:00 PM', event: 'Networking Lunch', icon: 'coffee', desc: 'Complimentary lunch for all participants.' },
-    { time: '02:00 PM', event: 'Final Rounds', icon: 'zap', desc: 'The top teams battle for the title.' },
-    { time: '04:00 PM', event: 'Valedictory & Prize Distribution', icon: 'award', desc: 'Closing ceremony and winners announced.' },
+    { time: '09:30 AM - 11:00 AM', event: 'Forenoon Session 1', icon: 'zap', desc: 'Hacking, Web Design & AI Movie Making' },
+    { time: '11:00 AM - 11:15 AM', event: 'Short Break', icon: 'coffee', desc: 'Morning refreshment break.' },
+    { time: '11:15 AM - 12:45 PM', event: 'Forenoon Session 2', icon: 'zap', desc: 'Debugging & Technical Quiz' },
+    { time: '12:45 PM - 01:30 PM', event: 'Lunch Break', icon: 'coffee', desc: 'Networking lunch for all participants.' },
+    { time: '01:30 PM - 03:00 PM', event: 'Afternoon Session', icon: 'zap', desc: 'Crick Auction & Marketing' },
+    { time: '03:00 PM - 03:15 PM', event: 'Short Break', icon: 'coffee', desc: 'Evening refreshment break.' },
+    { time: '03:30 PM - 04:30 PM', event: 'Valedictory Function', icon: 'award', desc: 'Closing ceremony and prize distribution.' },
 ];
 
 const facultyCoordinators = [

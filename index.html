@@ -47,13 +47,11 @@
 
             <div class="nav-links">
                 <a href="#home">Home</a>
+                <a href="#about">About</a>
                 <a href="#events">Events</a>
                 <a href="#schedule">Schedule</a>
+                <a href="#direction">Direction</a>
                 <a href="#coordinators">Contact</a>
-                <div class="nav-search">
-                    <i data-lucide="search"></i>
-                    <input type="text" placeholder="Search..." />
-                </div>
             </div>
 
             <button id="mobile-menu-toggle" aria-label="Open Menu">
@@ -65,8 +63,10 @@
         <div id="mobile-menu" class="mobile-menu">
             <div class="mobile-menu-content">
                 <a href="#home">HOME</a>
+                <a href="#about">ABOUT</a>
                 <a href="#events">EVENTS</a>
                 <a href="#schedule">SCHEDULE</a>
+                <a href="#direction">DIRECTION</a>
                 <a href="#coordinators">COORDINATORS</a>
                 <div class="divider"></div>
                 <a href="https://forms.gle/Jd66wSNrj88ipiwJ7" target="_blank" rel="noopener noreferrer"
@@ -128,6 +128,58 @@
             </div>
         </div>
     </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-label">Symposium '26</div>
+                    <h2 class="about-title">Sparking <span class="primary-text">Innovation</span> & Design Thinking</h2>
+                    <p class="about-text">
+                        TechWala '26 is a premier technical symposium organized by the Department of MCA at Dr.
+                        Mahalingam College of Engineering and Technology (MCET). Our mission is to provide a platform
+                        for budding tech enthusiasts to showcase their skills, collaborate on breakthrough ideas, and
+                        engage in high-octane competitions.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i data-lucide="target"></i>
+                            <div>
+                                <h4>Vision</h4>
+                                <p>Fostering a culture of innovative thinking and problem solving.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="lightbulb"></i>
+                            <div>
+                                <h4>Objective</h4>
+                                <p>Connecting academic excellence with industry-relevant challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-num">7+</span>
+                        <span class="stat-label">Events</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">Infinite</span>
+                        <span class="stat-label">Innovation</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">500+</span>
+                        <span class="stat-label">Attendees</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">10+</span>
+                        <span class="stat-label">Colleges</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Events Section -->
     <section id="events" class="events-section">
@@ -239,7 +291,7 @@
                     <h4 class="footer-label">Contact Hub</h4>
                     <div class="contact-hub">
                         <a href="https://www.google.com/maps/place/Dr.+Mahalingam+College+of+Engineering+and+Technology"
-                            target="_blank" class="contact-item">
+                            target="_blank" class="contact-item" id="direction">
                             <i data-lucide="map-pin" class="primary-text"></i>
                             <span>Udumalai Road, Pollachi,<br>Tamil Nadu 642003</span>
                         </a>
