@@ -8,13 +8,13 @@ const events = [
         iconType: 'shield',
         img: 'images/event1.png',
         prelims: [
-            'Written test: 30 Questions',
+            'Written test: 20 Questions',
             'Time limit: 30 minutes',
             'Top 8 teams qualify'
         ],
         finals: [
-            'Real-time tools provided',
-            'Solve 5 problems',
+            'Real-time tools provided(Linux)',
+            'Find the CTF flag',
             'Duration: 1 hour'
         ],
         participation: 'Max 3 members per team',
@@ -82,12 +82,12 @@ const events = [
         iconType: 'brain',
         img: 'images/event4.png',
         prelims: [
-            'Written test on CS basics',
+            'Online test on CS basics(30 questions)',
             '30 minutes',
             'Top 5 teams qualify'
         ],
         finals: [
-            'Rapid-fire buzzer quiz (10 questions)',
+            'Rapid-fire buzzer quiz (15 questions)',
             '30 minutes'
         ],
         participation: 'Max 3 members per team',
@@ -99,10 +99,10 @@ const events = [
         registrationLink: 'https://forms.gle/dL4N47GWmYy3iBS68'
     },
     {
-        title: 'Tech Reel Challenge [AI Movie Making]',
+        title: 'Tech Reel Challenge [AI Video Making]',
         category: 'TECHNICAL',
-        subCategory: 'AI MOVIE MAKING',
-        tagline: 'Movie directing is a perfect refuge for the mediocre',
+        subCategory: 'AI VIDEO MAKING',
+        tagline: 'Video directing is a perfect refuge for the mediocre',
         iconType: 'clapperboard',
         img: 'images/event5.png',
         prelims: [
@@ -427,46 +427,59 @@ function renderCoordinators() {
     grid.innerHTML = facultyCoordinators.map((coord, i) => {
         const initials = coord.event.split(' ').map(n => n[0].replace(/[^a-zA-Z]/g, '')).filter(Boolean).slice(0, 2).join('').toUpperCase();
         return `
-        <div class="coord-card">
-            <div style="display: flex; align-items: center; gap: 16px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 16px; margin-bottom: 6px; width: 100%;">
-                <div class="coord-avatar">${initials}</div>
-                <h4 style="font-size: 1.1rem; color: var(--color-primary); margin: 0; line-height: 1.3;">${coord.event}</h4>
+        <div class="coord-card advanced-style">
+            <div class="coord-side-panel">
+                <div class="coord-avatar-float">${initials}</div>
+                <div class="coord-event-tag">${coord.event.split(' [')[0]}</div>
             </div>
             
-            <div class="coord-info" style="width: 100%;">
-                <div style="margin-bottom: 16px;">
-                    <span style="font-size: 10px; font-weight: 700; background: var(--color-primary-dim); color: var(--color-primary); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px;">STAFF COORDINATOR</span>
-                    <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--glass-border);">
-                         <div style="background: rgba(0, 212, 255, 0.1); padding: 6px; border-radius: 50%;">
-                            <i data-lucide="user" style="width: 14px; height: 14px; color: var(--color-primary);"></i>
-                        </div>
-                        <span style="font-size: 14px; font-weight: 500; color: var(--text-main);">${coord.staff}</span>
-                    </div>
+            <div class="coord-main-content">
+                <div class="coord-section-label">
+                    <h4 class="event-display-name">${coord.event}</h4>
                 </div>
+                
+                <div class="coord-details-wrapper">
+                    <div class="staff-block">
+                        <span class="role-badge staff">Staff Lead</span>
+                        <div class="person-row">
+                            <i data-lucide="user-check"></i>
+                            <span class="person-name">${coord.staff}</span>
+                        </div>
+                    </div>
 
-                <div>
-                    <span style="font-size: 10px; font-weight: 700; background: rgba(176, 38, 255, 0.15); color: var(--color-accent); padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px;">STUDENT COORDINATORS</span>
-                    <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
-                        ${coord.students.map(s => `
-                            <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--glass-border);">
-                                <div style="display: flex; align-items: center; gap: 8px;">
-                                    <div style="background: rgba(176, 38, 255, 0.1); padding: 6px; border-radius: 50%;">
-                                        <i data-lucide="user" style="width: 14px; height: 14px; color: var(--color-accent);"></i>
-                                    </div>
-                                    <span style="font-size: 14px; color: var(--text-main); font-weight: 500;">${s.name}</span>
+                    <div class="student-block">
+                        <span class="role-badge student">Student Support</span>
+                        <div class="student-list">
+                            ${coord.students.map(s => `
+                                <div class="student-entry">
+                                    <span class="student-name-small">${s.name}</span>
+                                    <a href="tel:${s.phone}" class="contact-btn-mini">
+                                        <i data-lucide="phone"></i>
+                                    </a>
                                 </div>
-                                <a href="tel:${s.phone}" style="background: rgba(0, 212, 255, 0.1); padding: 8px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.background='rgba(0, 212, 255, 0.2)'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='rgba(0, 212, 255, 0.1)'; this.style.transform='scale(1)';">
-                                    <i data-lucide="phone" style="width: 14px; height: 14px; color: var(--color-primary);"></i>
-                                </a>
-                            </div>
-                        `).join('')}
+                            `).join('')}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         `;
     }).join('');
+
     lucide.createIcons();
+
+    const gridRef = document.getElementById('coordinators-grid');
+    const nextBtn = document.getElementById('next-coord-btn');
+    const prevBtn = document.getElementById('prev-coord-btn');
+
+    if (nextBtn && prevBtn && gridRef) {
+        nextBtn.addEventListener('click', () => {
+            gridRef.scrollBy({ left: 348, behavior: 'smooth' });
+        });
+        prevBtn.addEventListener('click', () => {
+            gridRef.scrollBy({ left: -348, behavior: 'smooth' });
+        });
+    }
 }
 
 // Render Assistance Links
