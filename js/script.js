@@ -152,10 +152,10 @@ const events = [
         iconType: 'trophy',
         img: 'images/event7.png',
         prelims: [
-            'Online Quiz (20 questions)',
+            'Online Quiz (20 questions) 12-03-2026 - 7 PM',
             'No negative marks',
             '10 minutes',
-            '10 teams qualify'
+            '8 teams qualify'
         ],
         finals: [
             'Live Bidding Arena',
