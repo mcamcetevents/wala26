@@ -1564,8 +1564,8 @@ section {
 /* Map Marker Pin */
 .roadmap-pin {
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 44px;
+    height: 44px;
     background: var(--marker-color, var(--color-primary));
     border-radius: 50% 50% 50% 0;
     display: flex;
@@ -1587,8 +1587,8 @@ section {
 }
 
 .pin-inner {
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 30px;
     background: #fff;
     border-radius: 50%;
     display: flex;
@@ -1599,8 +1599,8 @@ section {
 
 .pin-inner i {
     color: var(--marker-color);
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
 }
 
 /* Content block */

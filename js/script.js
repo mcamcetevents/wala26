@@ -57,13 +57,14 @@ const events = [
         iconType: 'globe',
         img: 'images/event3.png',
         prelims: [
-            'Written test on web design concepts',
-            '30 minutes',
-            'Top 6 teams qualify'
+            'Format: Fast-paced quiz on web design concepts, UI/UX principles',
+            'Duration: 30 minutes',
+            'Qualification: Top 6 teams advance to the Grand Finale'
         ],
         finals: [
-            'Design website based on spot theme',
-            'Software: PS, Flash, Dreamweaver',
+            'The AI Web-Craft: Create a responsive website with a surprise spot theme',
+            'Allowed: AI Generators (ChatGPT, Gemini, Midjourney, v0, etc.)',
+            'Tools: Modern code editors (VS Code, Sublime Text, etc.)',
             'Duration: 1 hour'
         ],
         participation: 'Max 3 members per team',
