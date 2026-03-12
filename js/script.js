@@ -174,13 +174,35 @@ const events = [
 ];
 
 const schedule = [
-    { time: '09:30 AM - 11:00 AM', event: 'Forenoon Session 1', icon: 'zap', desc: 'Hacking, Web Design & AI Movie Making' },
-    { time: '11:00 AM - 11:15 AM', event: 'Short Break', icon: 'coffee', desc: 'Morning refreshment break.' },
-    { time: '11:15 AM - 12:45 PM', event: 'Forenoon Session 2', icon: 'zap', desc: 'Debugging & Technical Quiz' },
-    { time: '12:45 PM - 01:30 PM', event: 'Lunch Break', icon: 'coffee', desc: 'Networking lunch for all participants.' },
-    { time: '01:30 PM - 03:00 PM', event: 'Afternoon Session', icon: 'zap', desc: 'Crick Auction & Marketing' },
-    { time: '03:00 PM - 03:15 PM', event: 'Short Break', icon: 'coffee', desc: 'Evening refreshment break.' },
-    { time: '03:30 PM - 04:30 PM', event: 'Valedictory Function', icon: 'award', desc: 'Closing ceremony and prize distribution.' },
+    {
+        time: '09:30 AM – 11:00 AM', event: 'Forenoon Session 1', icon: 'zap',
+        desc: 'Hacking, Web Design',
+        venues: [
+            { name: 'Hacking', room: 'Room B305' },
+            { name: 'Web Design', room: 'Room B205' }
+        ]
+    },
+    { time: '11:00 AM – 11:15 AM', event: 'Short Break', icon: 'coffee', desc: 'Morning refreshment break.', venues: [] },
+    {
+        time: '11:15 AM – 12:45 PM', event: 'Forenoon Session 2', icon: 'zap',
+        desc: 'Debugging, Technical Quiz',
+        venues: [
+            { name: 'Debugging', room: 'Room B205' },
+            { name: 'Technical Quiz', room: 'Room B305' }
+        ]
+    },
+    { time: '12:45 PM – 01:30 PM', event: 'Lunch Break', icon: 'coffee', desc: 'Networking lunch for all participants.', venues: [] },
+    {
+        time: '01:30 PM – 03:00 PM', event: 'Afternoon Session', icon: 'zap',
+        desc: 'Cricket Auction, Marketing, AI Movie Making (Review)',
+        venues: [
+            { name: 'Cricket Auction', room: 'Mech Seminar Hall' },
+            { name: 'Marketing', room: 'Room B103' },
+            { name: 'AI Movie Making (Review)', room: 'Room B205' }
+        ]
+    },
+    { time: '03:00 PM – 03:15 PM', event: 'Short Break', icon: 'coffee', desc: 'Evening refreshment break.', venues: [] },
+    { time: '03:30 PM – 04:30 PM', event: 'Valedictory Function', icon: 'award', desc: 'Closing ceremony and prize distribution.', venues: [] },
 ];
 
 const facultyCoordinators = [
@@ -400,6 +422,15 @@ function renderTimeline() {
         const alignmentClass = isOdd ? 'odd' : 'even';
         const color = colors[index % colors.length];
 
+        const venuesHtml = item.venues && item.venues.length > 0
+            ? `<div class="roadmap-venues">${item.venues.map(v => `
+                <div class="venue-pill">
+                    <span class="venue-name">${v.name}</span>
+                    <span class="venue-room"><i data-lucide="map-pin"></i>${v.room}</span>
+                </div>`).join('')}
+            </div>`
+            : '';
+
         return `
             <div class="roadmap-item ${alignmentClass} reveal-on-scroll" style="transition-delay:${index * 0.08}s">
                 <div class="roadmap-curve">
@@ -413,6 +444,7 @@ function renderTimeline() {
                     <span class="roadmap-time">${item.time}</span>
                     <h3 class="roadmap-title" style="color: ${color}">${item.event}</h3>
                     <p class="roadmap-desc">${item.desc}</p>
+                    ${venuesHtml}
                 </div>
             </div>
         `;
@@ -554,6 +586,14 @@ function initModals() {
         const event = events[index];
         const body = document.getElementById('modal-body');
 
+        const closeDate = new Date('March 12, 2026 15:00:00').getTime();
+        const now = new Date().getTime();
+        const isClosed = now >= closeDate;
+
+        const registerBtnHtml = isClosed
+            ? `<button class="btn btn-primary" disabled style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px; opacity: 0.6; cursor: not-allowed;">Enrollment Closed <i data-lucide="lock"></i></button>`
+            : `<a href="${event.registrationLink}" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px;">REGISTER NOW <i data-lucide="arrow-right"></i></a>`;
+
         body.innerHTML = `
             <div class="modal-header" style="text-align: center; margin-bottom: 20px;">
                 <div class="modal-header-meta" style="justify-content: center; margin-bottom: 12px;">
@@ -595,7 +635,7 @@ function initModals() {
                 </div>
 
                 <div style="margin-top: 8px;">
-                    <a href="${event.registrationLink}" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px;">REGISTER NOW <i data-lucide="arrow-right"></i></a>
+                    ${registerBtnHtml}
                 </div>
             </div>
         `;
