@@ -586,13 +586,7 @@ function initModals() {
         const event = events[index];
         const body = document.getElementById('modal-body');
 
-        const closeDate = new Date('March 12, 2026 15:00:00').getTime();
-        const now = new Date().getTime();
-        const isClosed = now >= closeDate;
-
-        const registerBtnHtml = isClosed
-            ? `<button class="btn btn-primary" disabled style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px; opacity: 0.6; cursor: not-allowed;">Enrollment Closed <i data-lucide="lock"></i></button>`
-            : `<a href="${event.registrationLink}" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px;">REGISTER NOW <i data-lucide="arrow-right"></i></a>`;
+        const registerBtnHtml = `<a href="${event.registrationLink}" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px; border-radius: 14px; font-size: 14px; border-radius: 50px;">REGISTER NOW <i data-lucide="arrow-right"></i></a>`;
 
         body.innerHTML = `
             <div class="modal-header" style="text-align: center; margin-bottom: 20px;">
